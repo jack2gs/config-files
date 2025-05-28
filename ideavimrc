@@ -21,7 +21,6 @@ let g:WhichKey_ShowTypedSequence = "true"
 """ Buffer/File
 map <leader>ff <action>(GotoFile)
 map <leader>fr <action>(RecentFiles)
-map <leader><leader> <Action>(RecentFiles)
 map <leader>fl <action>(RecentLocations)
 map <leader>fs <action>(NewScratchFile)
 
@@ -31,31 +30,77 @@ map <leader>/       <Action>(FindInPath)
 map <leader>ss      <Action>(Replace)
 map <leader>S       <Action>(ReplaceInPath)
 
-""" Code navigation/references
-map <leader>gi <Action>(GotoImplementation)
-
-""" Comments
-map <leader>cb <Action>(CommentByBlockComment)
-map <leader>cl <Action>(CommentByLineComment)
-
-""" Collapse or expand everything by one
-map <leader>zc <Action>(CollapseAllRegions)
-map <leader>zo <Action>(ExpandAllRegions)
+""" Editing 
+"Ctrl+Shift+up move line above
+map <C-S-Up> :m -2<CR>
+"Ctrl+Shift+down move line below
+map <C-S-Down> :m +1<CR>
+"Ctrl+Shift+Alt-up move line above
+map <C-S-A-Up> <Action>(MoveStatementUp) 
+"Ctrl+Shift+Alt-down move line below
+map <C-S-A-Down> <Action>(MoveStatementDown) 
 
 """ Tab navigation
 noremap <A-n> :tabnext<CR>
 noremap <A-p> :tabprev<CR>
-map <leader>q <Action>(CloseContent)
+map <leader>qq <Action>(CloseContent)
+map <leader>qa <Action>(CloseAllEditors)
 
 """ Window management
 " Pane navigation
-noremap <A-h> <C-w>h
-noremap <A-l> <C-w>l
-noremap <A-k> <C-w>k
-noremap <A-j> <C-w>j
+map <A-h> <C-w>h
+map <A-l> <C-w>l
+map <A-k> <C-w>k
+map <A-j> <C-w>j
 " Window splits
 map <leader>wv <Action>(SplitVertically)
 map <leader>ws <Action>(SplitHorizontally)
 map <leader>wu <Action>(Unsplit)
 map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+" Modes 
+map <leader>wd <action>(ToggleDistractionFreeMode)
+map <leader>wz <action>(ToggleZenMode)
+map <leader>wf <action>(ToggleFullScreen)
 
+""" Code navigation/references
+" gd - Go to declaration
+" gD - Go to definition
+" gc - Go to implementation
+map gc <Action>(GotoImplementation)
+" gr - Find usages
+map gr <Action>(FindUsages)
+" gt - Go to test
+map gt <Action>(GotoTest)
+" gC - Go to class
+map gC <Action>(GotoClass)
+" gs - Go to symbol
+map gs <Action>(GotoSymbol)
+" Jump between methods
+map [[ <Action>(MethodUp)
+map ]] <Action>(MethodDown)
+
+""" Code refactoring
+map <leader>rn <Action>(RenameElement)
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rv <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+
+""" Code generation
+map <leader>gg <Action>(GenerateCode)
+
+""" Comments
+map <leader>cb <Action>(CommentByBlockComment)
+map <leader>cl <Action>(CommentByLineComment)
+
+""" Collapse or expand
+map zc <Action>(CollapseRegion)
+map zo <Action>(ExpandRegion)
+map <leader>zc <Action>(CollapseAllRegions)
+map <leader>zo <Action>(ExpandAllRegions)
+
+""" 🛠 Build
+""" 🚀 Run
+""" 🐞 Debug
+""" ⛔ Breakpoints
