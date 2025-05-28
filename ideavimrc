@@ -1,0 +1,61 @@
+""" Leader key
+let mapleader=" "
+
+""" Basic
+set clipboard+=unnamed
+map ga <Action>(GotoAction)
+
+set smartcase
+set incsearch
+set hlsearch
+
+" Reload config files
+noremap <leader>sc :source ~/.ideavimrc<CR>
+
+""" Which-key setup
+set which-key 
+set notimeout
+let g:WhichKey_ShowVimActions = "true"
+let g:WhichKey_ShowTypedSequence = "true"
+
+""" Buffer/File
+map <leader>ff <action>(GotoFile)
+map <leader>fr <action>(RecentFiles)
+map <leader><leader> <Action>(RecentFiles)
+map <leader>fl <action>(RecentLocations)
+map <leader>fs <action>(NewScratchFile)
+
+""" Search and replace
+map /               <Action>(Find)
+map <leader>/       <Action>(FindInPath)
+map <leader>ss      <Action>(Replace)
+map <leader>S       <Action>(ReplaceInPath)
+
+""" Code navigation/references
+map <leader>gi <Action>(GotoImplementation)
+
+""" Comments
+map <leader>cb <Action>(CommentByBlockComment)
+map <leader>cl <Action>(CommentByLineComment)
+
+""" Collapse or expand everything by one
+map <leader>zc <Action>(CollapseAllRegions)
+map <leader>zo <Action>(ExpandAllRegions)
+
+""" Tab navigation
+noremap <A-n> :tabnext<CR>
+noremap <A-p> :tabprev<CR>
+map <leader>q <Action>(CloseContent)
+
+""" Window management
+" Pane navigation
+noremap <A-h> <C-w>h
+noremap <A-l> <C-w>l
+noremap <A-k> <C-w>k
+noremap <A-j> <C-w>j
+" Window splits
+map <leader>wv <Action>(SplitVertically)
+map <leader>ws <Action>(SplitHorizontally)
+map <leader>wu <Action>(Unsplit)
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+
