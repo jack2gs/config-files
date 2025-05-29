@@ -1,85 +1,111 @@
-""" Leader key
-let mapleader=" "
+""" ======================
+"""      Core Settings
+""" ======================
 
-""" Basic
+""" Leader Key
+let mapleader = " "
+
+""" Basic Settings
 set clipboard+=unnamed
-map ga <Action>(GotoAction)
-
 set smartcase
 set incsearch
 set hlsearch
 
-" Reload config files
-noremap <leader>sc :source ~/.ideavimrc<CR>
-
-""" Which-key setup
+""" Which-key Setup
 set which-key 
 set notimeout
 let g:WhichKey_ShowVimActions = "true"
 let g:WhichKey_ShowTypedSequence = "true"
 
-""" Buffer/File
-map <leader>ff <action>(GotoFile)
-map <leader>fr <action>(RecentFiles)
-map <leader>fl <action>(RecentLocations)
-map <leader>fs <action>(NewScratchFile)
 
-""" Search and replace
-map /               <Action>(Find)
-map <leader>/       <Action>(FindInPath)
-map <leader>ss      <Action>(Replace)
-map <leader>S       <Action>(ReplaceInPath)
+""" ======================
+"""      Navigation
+""" ======================
 
-""" Editing 
-"Ctrl+Shift+up move line above
-map <C-S-Up> :m -2<CR>
-"Ctrl+Shift+down move line below
-map <C-S-Down> :m +1<CR>
-"Ctrl+Shift+Alt-up move line above
-map <C-S-A-Up> <Action>(MoveStatementUp) 
-"Ctrl+Shift+Alt-down move line below
-map <C-S-A-Down> <Action>(MoveStatementDown) 
+""" General Navigation
+map ga <Action>(GotoAction)
 
-""" Tab navigation
-noremap <A-n> :tabnext<CR>
-noremap <A-p> :tabprev<CR>
-map <leader>qq <Action>(CloseContent)
-map <leader>qa <Action>(CloseAllEditors)
+""" File/Buffer Navigation
+map <leader>ff <Action>(GotoFile)
+map <leader>fr <Action>(RecentFiles)
+map <leader>fl <Action>(RecentLocations)
+map <leader>fn <Action>(NewScratchFile)
+map <S-F2> <Action>(NewFile)
 
-""" Window management
-" Pane navigation
+""" Code Navigation
+map gc <Action>(GotoImplementation)
+map gr <Action>(FindUsages)
+map gt <Action>(GotoTest)
+map gC <Action>(GotoClass)
+map gs <Action>(GotoSymbol)
+map [[ <Action>(MethodUp)
+map ]] <Action>(MethodDown)
+map <A-S-Up> <Action>(GotoPrevElementUnderCaretUsage)
+map <A-S-Down> <Action>(GotoNextElementUnderCaretUsage)
+map g; <Action>(JumpToLastChange)
+map g, <Action>(JumpToNextChange)
+
+
+""" ======================
+"""   Window Management
+""" ======================
+
+""" Pane Navigation
 map <A-h> <C-w>h
 map <A-l> <C-w>l
 map <A-k> <C-w>k
 map <A-j> <C-w>j
-" Window splits
+
+""" Window Operations
 map <leader>wv <Action>(SplitVertically)
 map <leader>ws <Action>(SplitHorizontally)
 map <leader>wu <Action>(Unsplit)
 map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
-" Modes 
-map <leader>wd <action>(ToggleDistractionFreeMode)
-map <leader>wz <action>(ToggleZenMode)
-map <leader>wf <action>(ToggleFullScreen)
 
-""" Code navigation/references
-" gd - Go to declaration
-" gD - Go to definition
-" gc - Go to implementation
-map gc <Action>(GotoImplementation)
-" gr - Find usages
-map gr <Action>(FindUsages)
-" gt - Go to test
-map gt <Action>(GotoTest)
-" gC - Go to class
-map gC <Action>(GotoClass)
-" gs - Go to symbol
-map gs <Action>(GotoSymbol)
-" Jump between methods
-map [[ <Action>(MethodUp)
-map ]] <Action>(MethodDown)
+""" Display Modes
+map <leader>wd <Action>(ToggleDistractionFreeMode)
+map <leader>wz <Action>(ToggleZenMode)
+map <leader>wf <Action>(ToggleFullScreen)
 
-""" Code refactoring
+
+""" ======================
+"""      Editing
+""" ======================
+
+""" Line Manipulation
+map <C-S-Up> :m -2<CR>
+map <C-S-Down> :m +1<CR>
+map <C-S-A-Up> <Action>(MoveStatementUp) 
+map <C-S-A-Down> <Action>(MoveStatementDown) 
+map <leader>sl :sort<CR>
+
+""" Multi-caret Operations
+map <leader>oo <Action>(SelectAllOccurrences)
+map <leader>on <Action>(NextOccurence)
+map <leader>op <Action>(PreviousOccurence)
+map <leader>oa <Action>(EditorAddCaretPerSelectedLine)
+map <C-A-Down> <Action>(SelectNextOccurrence)
+map <C-A-Up> <Action>(UnselectPreviousOccurrence)
+map <A-Down> <Action>(EditorCloneCaretBelow)
+map <A-Up> <Action>(EditorCloneCaretAbove)
+
+
+""" ======================
+"""   Search & Replace
+""" ======================
+
+map / <Action>(Find)
+map <leader>/ <Action>(FindInPath)
+map <leader>ss <Action>(Replace)
+map <leader>S <Action>(ReplaceInPath)
+map <F8> <Action>(GotoNextError)
+map <S-F8> <Action>(GotoPreviousError)
+
+
+""" ======================
+"""   Code Refactoring
+""" ======================
+
 map <leader>rn <Action>(RenameElement)
 map <leader>rm <Action>(ExtractMethod)
 map <leader>rv <Action>(IntroduceVariable)
@@ -87,20 +113,98 @@ map <leader>rf <Action>(IntroduceField)
 map <leader>rs <Action>(ChangeSignature)
 map <leader>rr <Action>(Refactorings.QuickListPopupAction)
 
-""" Code generation
+
+""" ======================
+"""   Code Actions
+""" ======================
+
+""" Code Generation
 map <leader>gg <Action>(GenerateCode)
 
 """ Comments
 map <leader>cb <Action>(CommentByBlockComment)
 map <leader>cl <Action>(CommentByLineComment)
 
-""" Collapse or expand
+""" Folding
 map zc <Action>(CollapseRegion)
 map zo <Action>(ExpandRegion)
 map <leader>zc <Action>(CollapseAllRegions)
 map <leader>zo <Action>(ExpandAllRegions)
 
-""" 🛠 Build
-""" 🚀 Run
-""" 🐞 Debug
-""" ⛔ Breakpoints
+
+""" ======================
+"""   Project Management
+""" ======================
+
+map <leader>pnf <Action>(NewDir)
+map <leader>pnF <Action>(NewRiderSolutionFolder)
+map <leader>pO <Action>(RiderOpenSolution)
+map <leader>pae <Action>(AddRiderItem)
+map <leader>pap <Action>(NewRiderProject)
+
+
+""" ======================
+"""   Build & Run
+""" ======================
+
+""" Build
+map <leader>bb <Action>(BuildCurrentProject)
+map <leader>bs <Action>(BuildWholeSolutionAction)
+map <leader>bS <Action>(RebuildSolutionAction)
+map <leader>bc <Action>(CancelBuildAction)
+map <leader>bC <Action>(CleanSolutionAction)
+
+""" Run
+map <F5> <Action>(Debug)
+map <A-F5> <Action>(Resume)
+map <S-F5> <Action>(Stop)
+map <C-F5> <Action>(Run)
+
+""" Breakpoints
+map <F9> <Action>(ToggleLineBreakpoint)
+map <C-S-F9> <Action>(RiderRemoveAllLineBreakpoints)
+
+""" Debugging
+map <S-F9> <Action>(EvaluateExpression)
+map <F10> <Action>(StepOver)
+map <F11> <Action>(StepInto)
+map <S-F11> <Action>(StepOut)
+map <C-F10> <Action>(RunToCursor)
+
+
+""" ======================
+"""   Unit Testing
+""" ======================
+
+map <leader>te <Action>(RiderUnitTestNavigateToExplorerAction)
+map <leader>tt <Action>(RiderUnitTestRunContextAction)
+map <leader>td <Action>(RiderUnitTestDebugContextAction)  
+map <leader>ta <Action>(RiderUnitTestRunSolutionAction)
+map <leader>tr <Action>(RiderUnitTestRepeatPreviousRunAction)
+map <leader>tc <Action>(RiderUnitTestCoverSolutionAction)
+
+
+""" ======================
+"""   Bookmarks
+""" ======================
+
+map <leader>mm <Action>(ToggleBookmark)
+map <leader>mn <Action>(NextBookmark)
+map <leader>mp <Action>(PreviousBookmark)
+map <leader>mc <Action>(ClearAllBookmarks)
+map <leader>ml <Action>(ShowBookmarks)
+
+
+""" ======================
+"""   Miscellaneous
+""" ======================
+
+""" Tab Navigation
+noremap <A-n> :tabnext<CR>
+noremap <A-p> :tabprev<CR>
+map <C-F4> <Action>(CloseContent)
+map <S-C-F4> <Action>(CloseAllEditors)
+map <C-S-T> <Action>(ReopenClosedTab)
+
+""" Config Reload
+noremap <leader>sc :source ~/.ideavimrc<CR>
