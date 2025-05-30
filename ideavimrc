@@ -205,8 +205,8 @@ map <leader>ml <Action>(ShowBookmarks)
 """ Tab Navigation
 noremap <A-n> :tabnext<CR>
 noremap <A-p> :tabprev<CR>
-map <C-F4> <Action>(CloseContent)
-map <S-C-F4> <Action>(CloseAllEditors)
+map <A-F4> <Action>(CloseContent)
+map <A-S-F4> <Action>(CloseAllEditors)
 map <C-S-T> <Action>(ReopenClosedTab)
 
 """ Config Reload
