@@ -107,6 +107,7 @@ map <S-F8> <Action>(GotoPreviousError)
 """ ======================
 
 map <leader>rn <Action>(RenameElement)
+map <F2> <Action>(RenameElement)
 map <leader>rm <Action>(ExtractMethod)
 map <leader>rv <Action>(IntroduceVariable)
 map <leader>rf <Action>(IntroduceField)
