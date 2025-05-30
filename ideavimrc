@@ -34,6 +34,7 @@ map <S-F2> <Action>(NewFile)
 
 """ Code Navigation
 map gc <Action>(GotoImplementation)
+map gf <Action>(GotoFile)
 map gr <Action>(FindUsages)
 map gt <Action>(GotoTest)
 map gC <Action>(GotoClass)
