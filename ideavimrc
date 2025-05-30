@@ -69,6 +69,14 @@ map <leader>wd <Action>(ToggleDistractionFreeMode)
 map <leader>wz <Action>(ToggleZenMode)
 map <leader>wf <Action>(ToggleFullScreen)
 
+""" Tool Windows
+map <leader>vd <Action>(ActivateDebugToolWindow)
+map <leader>ve <Action>(ActivateProjectToolWindow)
+map <leader>vm <Action>(ActivateBookmarksToolWindow)
+map <leader>vn <Action>(ActivateNuGetToolWindow)
+map <leader>vp <Action>(ActivateProblemsViewToolWindow)
+map <leader>vs <Action>(ActivateStructureToolWindow)
+map <leader>vt <Action>(ActivateUnitTestsToolWindow)
 
 """ ======================
 """      Editing
