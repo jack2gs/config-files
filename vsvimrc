@@ -173,8 +173,8 @@ nmap <leader>ml :vsc View.BookmarkWindow<CR>
 " Tab Navigation
 nmap <C-n> :vsc Window.NextTab<CR>
 nmap <C-p> :vsc Window.PreviousTab<CR>
-nmap <C-F4> :vsc File.Close<CR>
-nmap <C-S-F4> :vsc Window.CloseAllDocuments<CR>
+nmap <A-F4> :vsc File.Close<CR>
+nmap <A-S-F4> :vsc Window.CloseAllDocuments<CR>
 nmap <C-S-T> :vsc Window.RestoreClosedTab<CR>
 
 " Config Reload
