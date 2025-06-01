@@ -53,10 +53,10 @@ map g, <Action>(JumpToNextChange)
 """ ======================
 
 """ Pane Navigation
-map <A-h> <C-w>h
-map <A-l> <C-w>l
-map <A-k> <C-w>k
-map <A-j> <C-w>j
+map <C-h> <C-w>h
+map <C-l> <C-w>l
+map <C-k> <C-w>k
+map <C-j> <C-w>j
 
 """ Window Operations
 map <leader>wv <Action>(SplitVertically)
@@ -211,10 +211,10 @@ map <leader>ml <Action>(ShowBookmarks)
 """ ======================
 
 """ Tab Navigation
-noremap <A-n> :tabnext<CR>
-noremap <A-p> :tabprev<CR>
-map <A-F4> <Action>(CloseContent)
-map <A-S-F4> <Action>(CloseAllEditors)
+noremap <C-n> :tabnext<CR>
+noremap <C-p> :tabprev<CR>
+map <C-F4> <Action>(CloseContent)
+map <C-S-F4> <Action>(CloseAllEditors)
 map <C-S-T> <Action>(ReopenClosedTab)
 
 """ Config Reload

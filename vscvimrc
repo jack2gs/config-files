@@ -26,10 +26,10 @@ noremap gs :vsc workbench.action.showAllSymbols<CR>
 """ ======================
 
 """ Pane Navigation
-noremap <A-h> <C-w>h
-noremap <A-l> <C-w>l
-noremap <A-k> <C-w>k
-moremap <A-j> <C-w>j
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
+noremap <C-k> <C-w>k
+moremap <C-j> <C-w>j
 
 """ Window Operations
 noremap <leader>wv :vsc workbench.action.splitEditorRight<CR>
@@ -87,8 +87,8 @@ noremap <leader>zo :vsc editor.unfoldAllMarkerRegions<CR>
 """ ======================
 
 """ Tab Navigation
-noremap <A-n> :tabnext<CR>
-noremap <A-p> :tabprev<CR>
-noremap <A-F4> :vsc workbench.action.closeActiveEditor<CR>
-noremap <A-S-F4> :vsc workbench.action.closeEditorsInGroup<CR>
+noremap <C-n> :tabnext<CR>
+noremap <C-p> :tabprev<CR>
+noremap <C-F4> :vsc workbench.action.closeActiveEditor<CR>
+noremap <C-S-F4> :vsc workbench.action.closeEditorsInGroup<CR>
 noremap <C-S-T> :vsc workbench.action.reopenClosedEditor<CR>
