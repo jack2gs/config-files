@@ -1,0 +1,181 @@
+" ======================
+"      Core Settings
+" ======================
+"set winaltkeys=no
+let mapleader="\<Space>"
+set clipboard=unnamed
+set smartcase
+set incsearch
+set hlsearch
+
+" ======================
+"      Navigation
+" ======================
+noremap ga :vsc Window.QuickLaunch<CR>
+noremap <C-x> :vsc Window.QuickLaunch<CR>
+
+" File/Buffer Navigation
+noremap <leader>ff :vsc File.OpenFile<CR>
+noremap <leader>fn :vsc File.NewFile<CR>
+noremap <leader>fr :vsc Edit.GoToRecentFile<CR>
+noremap <S-F2> :vsc Project.AddNewItem<CR>
+
+" Code Navigation
+noremap gc :vsc Edit.GoToImplementation<CR>
+noremap gf :vsc Edit.GoToFile<CR>
+noremap gr :vsc Edit.FindAllReferences<CR>
+noremap gt :vsc Edit.GoToText<CR>
+noremap gC :vsc Edit.GoToType<CR>
+noremap gs :vsc Edit.GoToSymbol<CR>
+noremap [[ :vsc Edit.PreviousMethod<CR>
+noremap ]] :vsc Edit.NextMethod<CR>
+noremap <A-S-Up> :vsc Edit.GoToPreLocation<CR>
+noremap <A-S-Down> :vsc Edit.GoToNextLocation<CR>
+noremap g; :vsc Edit.GoToLastEditLocation<CR>
+noremap g, :vsc Edit.GoToLastEditLocation<CR>
+noremap <C-o> :vsc View.NavigateBackward<CR>
+noremap <C-i> :vsc View.NavigateForward<CR>
+
+" ======================
+"   Window Management
+" ======================
+
+" Pane Navigation
+map <C-h> <C-w>h
+map <C-l> <C-w>l
+map <C-k> <C-w>k
+map <C-j> <C-w>j
+
+" Window Operations
+noremap <leader>wv :vsplit<CR>
+noremap <leader>ws :split<CR>
+noremap <leader>wu :split<CR>
+noremap <leader>wm :vsc Window.MovetoNextTabGroup<CR>
+
+" Tool Windows
+noremap <leader>vd :vsc Debug.Out<CR>
+noremap <leader>ve :vsc View.SolutionExplorer<CR>
+noremap <leader>vm :vsc View.BookmarkWindow<CR>
+noremap <leader>vn :vsc Project.ManageNuGetPackages<CR>
+noremap <leader>vp :vsc View.ErrorList<CR>
+noremap <leader>vs :vsc View.DocumentOutline<CR>
+noremap <leader>vt :vsc TestExplorer.ShowTestExplorer<CR>
+
+" ======================
+"      Editing
+" ======================
+" Line Manipulation
+noremap <C-S-Up> :m -2<CR>
+noremap <C-S-Down> :m +1<CR>
+noremap <C-S-A-Up> :vsc Edit.MoveSelectedLinesUp<CR>
+noremap <C-S-A-Down> :vsc Edit.MoveSelectedLinesDown<CR>
+noremap <leader>sl :vsc Edit.SortLines<CR>
+
+" Multi-caret Operations
+noremap <leader>oo :vsc Edit.InsertCaretsatAllMatching<CR>
+"noremap <leader>on :vsc Edit.NextSubword<CR>
+"noremap <leader>op :vsc Edit.PreviousSubword<CR>
+noremap <C-A-Down> <C-A-n> 
+noremap <C-A-Up> <C-A-P> 
+noremap <A-Down> <C-A-Down>
+noremap <A-Up> <C-A-Up> 
+
+" ======================
+"   Search & Replace
+" ======================
+noremap / :vsc Edit.Find<CR>
+noremap <leader>/ :vsc Edit.FindinFiles<CR>
+noremap <leader>ss :vsc Edit.Replace<CR>
+noremap <leader>S :vsc Edit.ReplaceinFiles<CR>
+noremap <F8> :vsc View.NextError<CR>
+noremap <S-F8> :vsc View.PreviousError<CR>
+
+" ======================
+"   Code Refactoring
+" ======================
+noremap <leader>rn :vsc Refactor.Rename<CR>
+noremap <F2> :vsc Refactor.Rename<CR>
+noremap <leader>ri :vsc Refactor.ExtractInterface<CR>
+noremap <leader>rm :vsc Refactor.ExtractMethod<CR>
+noremap <leader>rv :vsc Refactor.ExtractVariable<CR>
+noremap <leader>rf :vsc Refactor.EncapsulateField<CR>
+
+" ======================
+"   Code Actions
+" ======================
+
+" Comments
+noremap <leader>cb :vsc Edit.ToggleBlockComment<CR>
+noremap <leader>cl :vsc Edit.ToggleLineComment<CR>
+
+" Folding
+noremap zc :vsc Edit.CollapseCurrentRegion<CR>
+noremap zo :vsc Edit.ExpandCurrentRegion<CR>
+noremap <leader>zc :vsc Edit.CollapseAllOutlining<CR>
+noremap <leader>zo :vsc Edit.ExpandAllOutlining<CR>
+
+" ======================
+"   Project Management
+" ======================
+noremap <leader>pnf :vsc Project.NewFolder<CR>
+noremap <leader>pO :vsc File.OpenProject<CR>
+noremap <leader>pae :vsc Project.AddExistingItem<CR>
+noremap <leader>pap :vsc File.NewProject<CR>
+
+" ======================
+"   Build & Run
+" ======================
+" Build
+noremap <leader>bb :vsc Build.BuildSelection<CR>
+noremap <leader>bs :vsc Build.BuildSolution<CR>
+noremap <leader>bS :vsc Build.RebuildSolution<CR>
+noremap <leader>bc :vsc Build.Cancel<CR>
+noremap <leader>bC :vsc Build.CleanSolution<CR>
+
+" Run
+noremap <F5> :vsc Debug.Start<CR>
+noremap <A-F5> :vsc Debug.Restart<CR>
+noremap <S-F5> :vsc Debug.StopDebugging<CR>
+noremap <C-F5> :vsc Debug.StartWithoutDebugging<CR>
+
+" Breakpoints
+noremap <F9> :vsc Debug.ToggleBreakpoint<CR>
+noremap <C-S-F9> :vsc Debug.DeleteAllBreakpoints<CR>
+
+" Debugging
+noremap <S-F9> :vsc Debug.QuickWatch<CR>
+noremap <F10> :vsc Debug.StepOver<CR>
+noremap <F11> :vsc Debug.StepInto<CR>
+noremap <S-F11> :vsc Debug.StepOut<CR>
+noremap <C-F10> :vsc Debug.RunToCursor<CR>
+
+" ======================
+"   Unit Testing
+" ======================
+noremap <leader>te :vsc TestExplorer.ShowTestExplorer<CR>
+noremap <leader>tt :vsc TestExplorer.RunAllTestsInContext<CR>
+noremap <leader>td :vsc TestExplorer.DebugAllTestsInContext<CR>
+noremap <leader>ta :vsc TestExplorer.RunAllTests<CR>
+noremap <leader>tr :vsc TestExplorer.RepeatLastRun<CR>
+
+" ======================
+"   Bookmarks
+" ======================
+nmap <leader>mm :vsc Edit.ToggleBookmark<CR>
+nmap <leader>mn :vsc Edit.NextBookmark<CR>
+nmap <leader>mp :vsc Edit.PreviousBookmark<CR>
+nmap <leader>mc :vsc Edit.ClearBookmarks<CR>
+nmap <leader>ml :vsc View.BookmarkWindow<CR>
+
+" ======================
+"   Miscellaneous
+" ======================
+" Tab Navigation
+nmap <C-n> :vsc Window.NextTab<CR>
+nmap <C-p> :vsc Window.PreviousTab<CR>
+nmap <A-F4> :vsc File.Close<CR>
+nmap <A-S-F4> :vsc Window.CloseAllDocuments<CR>
+nmap <C-S-T> :vsc Window.RestoreClosedTab<CR>
+
+" Config Reload
+nmap <leader>sc :source ~/.vsvimrc<CR>

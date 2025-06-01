@@ -1,0 +1,7 @@
+{
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "~/.vscvimrc",
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.leader": "<Space>"
+}

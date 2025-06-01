@@ -1,0 +1,94 @@
+""" ======================
+"""      Core Settings
+""" ======================
+
+""" General Navigation
+noremap ga :vsc workbench.action.showCommands<CR>
+
+
+""" File/Buffer Navigation
+noremap <leader>ff :vsc workbench.action.quickOpen<CR>
+noremap <leader>fr :vsc workbench.action.openRecent<CR>
+noremap <leader>fn :vsc welcome.showNewFileEntries<CR>
+noremap <S-F2> :vsc explorer.newFile<CR>
+
+""" Code Navigation
+noremap gc :vsc references-view.findImplementations<CR>
+noremap gd :vsc editor.action.revealDefinition<CR>
+noremap gD :vsc editor.action.goToTypeDefinition<CR>
+noremap gf :vsc workbench.action.quickOpen<CR> 
+noremap gr :vsc references-view.findReferences<CR>
+noremap gt :vsc workbench.action.quickTextSearch<CR>
+noremap gs :vsc workbench.action.showAllSymbols<CR>
+
+""" ======================
+"""   Window Management
+""" ======================
+
+""" Pane Navigation
+noremap <A-h> <C-w>h
+noremap <A-l> <C-w>l
+noremap <A-k> <C-w>k
+moremap <A-j> <C-w>j
+
+""" Window Operations
+noremap <leader>wv :vsc workbench.action.splitEditorRight<CR>
+noremap <leader>ws :vsc workbench.action.splitEditorDown<CR> 
+noremap <leader>wm :vsc workbench.action.moveEditorToNextGroup<CR>
+noremap <leader>wM :vsc workbench.action.moveEditorToPreviousGroup<CR>
+
+""" Display Modes
+noremap <leader>wz :vsc workbench.action.toggleZenMode<CR>
+noremap <leader>wf :vsc workbench.action.toggleFullScreen<CR>
+
+""" Tool Windows
+noremap <leader>vd :vsc workbench.view.debug<CR> 
+noremap <leader>vp :vsc workbench.actions.view.problems<CR>
+noremap <leader>vs :vsc outline.focus<CR>
+
+""" ======================
+"""      Editing
+""" ======================
+
+""" Line Manipulation
+noremap <C-S-Up> :m -2<CR>
+noremap <C-S-Down> :m +1<CR>
+noremap <leader>sl :sort<CR>
+
+""" ======================
+"""   Search & Replace
+""" ======================
+
+noremap / :vsc actions.find<CR>
+noremap <leader>/ :vsc workbench.action.findInFiles<CR>
+noremap <leader>ss :vsc editor.action.startFindReplaceAction<CR>
+noremap <leader>S :vsc workbench.action.replaceInFiles<CR>
+noremap <F8> :vsc editor.action.marker.nextInFiles<CR>
+noremap <S-F8> :vsc editor.action.marker.prevInFiles<CR>
+
+""" ======================
+"""   Code Refactoring
+""" ======================
+
+noremap <leader>rn :vsc editor.action.rename<CR>
+noremap <F2> :vsc editor.action.rename<CR>
+noremap <leader>rr :vsc editor.action.refactor<CR>
+
+""" Comments
+noremap <leader>cb :vsc editor.action.blockComment<CR>
+noremap <leader>cl :vsc editor.action.commentLine<CR>
+
+""" Folding
+noremap <leader>zc :vsc editor.foldAllMarkerRegions<CR>
+noremap <leader>zo :vsc editor.unfoldAllMarkerRegions<CR>
+
+""" ======================
+"""   Miscellaneous
+""" ======================
+
+""" Tab Navigation
+noremap <A-n> :tabnext<CR>
+noremap <A-p> :tabprev<CR>
+noremap <A-F4> :vsc workbench.action.closeActiveEditor<CR>
+noremap <A-S-F4> :vsc workbench.action.closeEditorsInGroup<CR>
+noremap <C-S-T> :vsc workbench.action.reopenClosedEditor<CR>
