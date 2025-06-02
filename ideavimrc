@@ -169,9 +169,11 @@ map <leader>bC <Action>(CleanSolutionAction)
 
 """ Run
 map <F5> <Action>(Debug)
+map <C-S-F5> <Action>(ChooseDebugConfiguration)
 map <A-F5> <Action>(Resume)
 map <S-F5> <Action>(Stop)
 map <C-F5> <Action>(Run)
+map <C-A-F5> <Action>(ChooseRunConfiguration)
 
 """ Breakpoints
 map <F9> <Action>(ToggleLineBreakpoint)
