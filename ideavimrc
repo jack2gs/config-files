@@ -11,6 +11,7 @@ set smartcase
 set incsearch
 set hlsearch
 set ideajoin
+set easymotion
 
 """ Which-key Setup
 set which-key 

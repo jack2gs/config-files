@@ -3,5 +3,6 @@
     "vim.vimrc.path": "~/.vscvimrc",
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
-    "vim.leader": "<Space>"
+    "vim.leader": "<Space>",
+    "vim.easymotion": true
 }
