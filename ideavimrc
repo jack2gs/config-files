@@ -10,6 +10,7 @@ set clipboard+=unnamed
 set smartcase
 set incsearch
 set hlsearch
+set ideajoin
 
 """ Which-key Setup
 set which-key 
