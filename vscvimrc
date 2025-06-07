@@ -16,7 +16,7 @@ noremap <S-F2> :vsc explorer.newFile<CR>
 noremap gc :vsc references-view.findImplementations<CR>
 noremap gd :vsc editor.action.revealDefinition<CR>
 noremap gD :vsc editor.action.goToTypeDefinition<CR>
-noremap gf :vsc workbench.action.quickOpen<CR> 
+noremap gf :vsc workbench.action.quickOpen<CR>
 noremap gr :vsc references-view.findReferences<CR>
 noremap gt :vsc workbench.action.quickTextSearch<CR>
 noremap gs :vsc workbench.action.showAllSymbols<CR>
@@ -32,8 +32,8 @@ noremap <C-k> <C-w>k
 moremap <C-j> <C-w>j
 
 """ Window Operations
-noremap <leader>wv :vsc workbench.action.splitEditorRight<CR>
-noremap <leader>ws :vsc workbench.action.splitEditorDown<CR> 
+noremap <leader>wv <C-w>v
+noremap <leader>ws <C-w>s
 noremap <leader>wm :vsc workbench.action.moveEditorToNextGroup<CR>
 noremap <leader>wM :vsc workbench.action.moveEditorToPreviousGroup<CR>
 
@@ -42,7 +42,7 @@ noremap <leader>wz :vsc workbench.action.toggleZenMode<CR>
 noremap <leader>wf :vsc workbench.action.toggleFullScreen<CR>
 
 """ Tool Windows
-noremap <leader>vd :vsc workbench.view.debug<CR> 
+noremap <leader>vd :vsc workbench.view.debug<CR>
 noremap <leader>vp :vsc workbench.actions.view.problems<CR>
 noremap <leader>vs :vsc outline.focus<CR>
 
@@ -89,6 +89,9 @@ noremap <leader>zo :vsc editor.unfoldAllMarkerRegions<CR>
 """ Tab Navigation
 noremap <C-n> :tabnext<CR>
 noremap <C-p> :tabprev<CR>
-noremap <A-F4> :vsc workbench.action.closeActiveEditor<CR>
-noremap <A-S-F4> :vsc workbench.action.closeEditorsInGroup<CR>
+noremap <C-F4> :close<CR>
+noremap <leader>tco :tabonly<CR>
+noremap <leader>tcg :vsc workbench.action.closeEditorsInGroup<CR>
+noremap <leader>tC :vsc workbench.action.closeAllEditors<CR>
+""" Editor Actions 
 noremap <C-S-T> :vsc workbench.action.reopenClosedEditor<CR>

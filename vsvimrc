@@ -41,14 +41,14 @@ noremap <C-i> :vsc View.NavigateForward<CR>
 " ======================
 
 " Pane Navigation
-map <C-h> <C-w>h
-map <C-l> <C-w>l
-map <C-k> <C-w>k
-map <C-j> <C-w>j
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
+noremap <C-k> <C-w>k
+noremap <C-j> <C-w>j
 
 " Window Operations
-noremap <leader>wv :vsplit<CR>
-noremap <leader>ws :split<CR>
+noremap <leader>wv <C-w>v
+noremap <leader>ws <C-w>s
 noremap <leader>wu :split<CR>
 noremap <leader>wm :vsc Window.MovetoNextTabGroup<CR>
 
@@ -75,10 +75,10 @@ noremap <leader>sl :vsc Edit.SortLines<CR>
 noremap <leader>oo :vsc Edit.InsertCaretsatAllMatching<CR>
 "noremap <leader>on :vsc Edit.NextSubword<CR>
 "noremap <leader>op :vsc Edit.PreviousSubword<CR>
-noremap <C-A-Down> <C-A-n> 
-noremap <C-A-Up> <C-A-P> 
+noremap <C-A-Down> <C-A-n>
+noremap <C-A-Up> <C-A-P>
 noremap <A-Down> <C-A-Down>
-noremap <A-Up> <C-A-Up> 
+noremap <A-Up> <C-A-Up>
 
 " ======================
 "   Search & Replace
@@ -161,21 +161,22 @@ noremap <leader>tr :vsc TestExplorer.RepeatLastRun<CR>
 " ======================
 "   Bookmarks
 " ======================
-nmap <leader>mm :vsc Edit.ToggleBookmark<CR>
-nmap <leader>mn :vsc Edit.NextBookmark<CR>
-nmap <leader>mp :vsc Edit.PreviousBookmark<CR>
-nmap <leader>mc :vsc Edit.ClearBookmarks<CR>
-nmap <leader>ml :vsc View.BookmarkWindow<CR>
+noremap <leader>mm :vsc Edit.ToggleBookmark<CR>
+noremap <leader>mn :vsc Edit.NextBookmark<CR>
+noremap <leader>mp :vsc Edit.PreviousBookmark<CR>
+noremap <leader>mc :vsc Edit.ClearBookmarks<CR>
+noremap <leader>ml :vsc View.BookmarkWindow<CR>
 
 " ======================
 "   Miscellaneous
 " ======================
 " Tab Navigation
-nmap <C-n> :vsc Window.NextTab<CR>
-nmap <C-p> :vsc Window.PreviousTab<CR>
-nmap <A-F4> :vsc File.Close<CR>
-nmap <A-S-F4> :vsc Window.CloseAllDocuments<CR>
-nmap <C-S-T> :vsc Window.RestoreClosedTab<CR>
+noremap <C-n> :vsc Window.NextTab<CR>
+noremap <C-p> :vsc Window.PreviousTab<CR>
+noremap <C-F4> :close<CR>
+noremap <C-S-F4> :vsc File.CloseOtherTabs<CR>
+noremap <C-A-S-F4> :vsc Window.CloseAllDocuments<CR>
+noremap <C-S-T> :vsc Window.RestoreClosedTab<CR>
 
 " Config Reload
-nmap <leader>sc :source ~/.vsvimrc<CR>
+noremap <leader>sc :source ~/.vsvimrc<CR>
