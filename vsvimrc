@@ -80,6 +80,10 @@ noremap <C-A-Up> <C-A-P>
 noremap <A-Down> <C-A-Down>
 noremap <A-Up> <C-A-Up>
 
+" Black Hole Register
+noremap <leader>c "_c
+noremap <leader>x "_x
+
 " ======================
 "   Search & Replace
 " ======================

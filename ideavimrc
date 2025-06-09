@@ -101,6 +101,10 @@ map <C-A-Up> <Action>(UnselectPreviousOccurrence)
 map <A-Down> <Action>(EditorCloneCaretBelow)
 map <A-Up> <Action>(EditorCloneCaretAbove)
 
+""" Black Hole Register
+noremap <leader>d "_d
+noremap <leader>c "_c
+noremap <leader>x "_x
 
 """ ======================
 """   Search & Replace

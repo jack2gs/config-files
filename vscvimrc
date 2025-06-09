@@ -55,6 +55,11 @@ noremap <C-S-Up> :m -2<CR>
 noremap <C-S-Down> :m +1<CR>
 noremap <leader>sl :sort<CR>
 
+""" Black Hole Register
+noremap <leader>d "_d
+noremap <leader>c "_c
+noremap <leader>x "_x
+
 """ ======================
 """   Search & Replace
 """ ======================
