@@ -187,6 +187,7 @@ map <C-S-F9> <Action>(RiderRemoveAllLineBreakpoints)
 map <S-F9> <Action>(EvaluateExpression)
 map <F10> <Action>(StepOver)
 map <F11> <Action>(StepInto)
+map <A-S-F11> <Action>(SmartStepInto)
 map <S-F11> <Action>(StepOut)
 map <C-F10> <Action>(RunToCursor)
 
