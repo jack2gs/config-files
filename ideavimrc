@@ -35,6 +35,7 @@ map <leader>fn <Action>(NewScratchFile)
 map <S-F2> <Action>(NewFile)
 
 """ Code Navigation
+map gb <Action>(GotoSuperMethod)
 map gc <Action>(GotoImplementation)
 map gf <Action>(GotoFile)
 map gr <Action>(FindUsages)
