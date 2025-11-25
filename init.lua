@@ -353,3 +353,46 @@ vim.keymap.set('n', '<leader>sc', function()
   vim.cmd('source $MYVIMRC')
   vim.cmd('PackerSync')
 end, { desc = 'Reload config and PackerSync' })
+
+-- Terminal Config
+local term_winid = nil
+
+-- Global function
+function _G.toggle_terminal()
+    -- Always check if our stored window is still valid and a terminal
+    if term_winid then
+        local is_valid = vim.api.nvim_win_is_valid(term_winid)
+        if is_valid then
+            local win_buf = vim.api.nvim_win_get_buf(term_winid)
+            if vim.bo[win_buf].buftype ~= 'terminal' then
+                term_winid = nil
+            end
+        else
+            term_winid = nil
+        end
+    end
+    local current_win = vim.api.nvim_get_current_win()
+    
+    if term_winid and vim.api.nvim_win_is_valid(term_winid) then
+        if current_win == term_winid then
+            -- Close terminal if we're in it
+            vim.api.nvim_win_close(term_winid, true)
+            term_winid = nil
+        else
+            -- Focus terminal if it exists
+            vim.api.nvim_set_current_win(term_winid)
+            vim.cmd('startinsert')
+        end
+    else
+        -- Create new terminal
+        vim.cmd('botright 10split | terminal')
+        term_winid = vim.api.nvim_get_current_win()
+        vim.cmd('startinsert')
+    end
+end
+
+-- Mappings
+-- <C-`> : CTRL + Tilde
+vim.keymap.set('n', '<C-Space>', '<cmd>lua toggle_terminal()<cr>', { desc = 'Toggle terminal' })
+vim.keymap.set('t', '<C-Space>', '<C-\\><C-n><cmd>lua toggle_terminal()<cr>', { desc = 'Toggle terminal' })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
