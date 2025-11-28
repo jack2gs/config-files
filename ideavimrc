@@ -32,6 +32,7 @@ map <leader>ff <Action>(GotoFile)
 map <leader>fr <Action>(RecentFiles)
 map <leader>fl <Action>(RecentLocations)
 map <leader>fn <Action>(NewScratchFile)
+map <leader>fN <Action>(NewElement)
 map <S-F2> <Action>(NewFile)
 
 """ Code Navigation
