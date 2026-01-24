@@ -11,6 +11,8 @@ noremap <leader>ff :vsc workbench.action.quickOpen<CR>
 noremap <leader>fr :vsc workbench.action.openRecent<CR>
 noremap <leader>fn :vsc welcome.showNewFileEntries<CR>
 noremap <S-F2> :vsc explorer.newFile<CR>
+noremap <A-F2> :vsc workbench.action.files.saveFiles<CR>
+
 
 """ Code Navigation
 noremap gc :vsc references-view.findImplementations<CR>
@@ -64,10 +66,10 @@ noremap <leader>x "_x
 """   Search & Replace
 """ ======================
 
-noremap / :vsc actions.find<CR>
-noremap <leader>/ :vsc workbench.action.findInFiles<CR>
-noremap <leader>ss :vsc editor.action.startFindReplaceAction<CR>
-noremap <leader>S :vsc workbench.action.replaceInFiles<CR>
+noremap <leader>ss :vsc actions.find<CR>
+noremap <leader>pss :vsc workbench.action.findInFiles<CR>
+noremap <leader>sr :vsc editor.action.startFindReplaceAction<CR>
+noremap <leader>psr :vsc workbench.action.replaceInFiles<CR>
 noremap <F8> :vsc editor.action.marker.nextInFiles<CR>
 noremap <S-F8> :vsc editor.action.marker.prevInFiles<CR>
 
@@ -100,3 +102,6 @@ noremap <leader>tcg :vsc workbench.action.closeEditorsInGroup<CR>
 noremap <leader>tC :vsc workbench.action.closeAllEditors<CR>
 """ Editor Actions 
 noremap <C-S-T> :vsc workbench.action.reopenClosedEditor<CR>
+
+""" Config Reload
+noremap <leader>sc :source ~/.vscvimrc<CR>
