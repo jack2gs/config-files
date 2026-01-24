@@ -34,6 +34,7 @@ map <leader>fl <Action>(RecentLocations)
 map <leader>fn <Action>(NewScratchFile)
 map <leader>fN <Action>(NewElement)
 map <S-F2> <Action>(NewFile)
+map <A-F2> <Action>(SaveAll)
 
 """ Code Navigation
 map gb <Action>(GotoSuperMethod)
@@ -50,6 +51,9 @@ map <A-S-Up> <Action>(GotoPrevElementUnderCaretUsage)
 map <A-S-Down> <Action>(GotoNextElementUnderCaretUsage)
 map g; <Action>(JumpToLastChange)
 map g, <Action>(JumpToNextChange)
+
+""" File Structure
+map <A-\> <Action>(ActivateStructureToolWindow)
 
 
 """ ======================
@@ -91,12 +95,10 @@ map <C-S-Up> :m -2<CR>
 map <C-S-Down> :m +1<CR>
 map <C-S-A-Up> <Action>(MoveStatementUp) 
 map <C-S-A-Down> <Action>(MoveStatementDown) 
-map <leader>sl :sort<CR>
+map <leader>es :sort<CR>
 
 """ Multi-caret Operations
 map <leader>oo <Action>(SelectAllOccurrences)
-map <leader>on <Action>(NextOccurence)
-map <leader>op <Action>(PreviousOccurence)
 map <leader>oa <Action>(EditorAddCaretPerSelectedLine)
 map <C-A-Down> <Action>(SelectNextOccurrence)
 map <C-A-Up> <Action>(UnselectPreviousOccurrence)
@@ -112,13 +114,16 @@ noremap <leader>x "_x
 """   Search & Replace
 """ ======================
 
-map / <Action>(Find)
-map <leader>/ <Action>(FindInPath)
-map <leader>ss <Action>(Replace)
-map <leader>S <Action>(ReplaceInPath)
+map <leader>ss <Action>(Find)
+map <leader>pss <Action>(FindInPath)
+map <leader>sr <Action>(Replace)
+map <leader>psr <Action>(ReplaceInPath)
+map <F3> <Action>(FindNext)
+map <S-F3> <Action>(FindPrevious)
 map <F8> <Action>(GotoNextError)
 map <S-F8> <Action>(GotoPreviousError)
-
+map <A-F8> <Action>(ReSharperGotNextErrorInSolution)
+map <A-S-F8> <Action>(ReSharperGotoPrevErrorInSolution)
 
 """ ======================
 """   Code Refactoring
