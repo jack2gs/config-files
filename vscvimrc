@@ -10,8 +10,8 @@ noremap ga :vsc workbench.action.showCommands<CR>
 noremap <leader>ff :vsc workbench.action.quickOpen<CR>
 noremap <leader>fr :vsc workbench.action.openRecent<CR>
 noremap <leader>fn :vsc welcome.showNewFileEntries<CR>
-noremap <S-F2> :vsc explorer.newFile<CR>
-noremap <A-F2> :vsc workbench.action.files.saveFiles<CR>
+nmap <S-F2> :vsc explorer.newFile<CR>
+nmap <A-F2> :vsc workbench.action.files.saveFiles<CR>
 
 
 """ Code Navigation
