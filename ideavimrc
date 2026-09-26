@@ -149,12 +149,12 @@ map <leader>cb <Action>(CommentByBlockComment)
 map <leader>cl <Action>(CommentByLineComment)
 
 """ Folding
-map zc <Action>(CollapseRegion)
-map zo <Action>(ExpandRegion)
-map zC <Action>(CollapseRegionRecursively)
-map zO <Action>(ExpandRegionRecursively)
-map zM <Action>(CollapseAllRegions)
-map zR <Action>(ExpandAllRegions)
+"""map zc <Action>(CollapseRegion)
+"""map zo <Action>(ExpandRegion)
+"""map zC <Action>(CollapseRegionRecursively)
+"""map zO <Action>(ExpandRegionRecursively)
+"""map zM <Action>(CollapseAllRegions)
+"""map zR <Action>(ExpandAllRegions)
 
 """ ======================
 """   Project Management
