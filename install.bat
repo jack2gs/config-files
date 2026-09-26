@@ -6,7 +6,7 @@ set "FORCE=0"
 if /i "%~1"=="--force" set "FORCE=1"
 if /i "%~1"=="/f"      set "FORCE=1"
 
-echo Linking from %DIR%
+echo Installing from %DIR%
 echo.
 
 rem ---- edit this list: "src:dest"  (dest is relative to %USERPROFILE%) ----
@@ -15,7 +15,7 @@ for %%L in (
   "vscvimrc:.vscvimrc"
 ) do (
   for /f "tokens=1,* delims=:" %%A in ("%%~L") do (
-    call :link_file "%%A" "%%B"
+    call :copy_file "%%A" "%%B"
   )
 )
 
@@ -32,7 +32,7 @@ rem ===============================================================
 rem Subroutines
 rem ===============================================================
 
-:link_file
+:copy_file
 set "SRC=%~1"
 set "DEST=%~2"
 
@@ -47,12 +47,19 @@ for %%I in ("%FULL_DEST%") do set "DEST_DIR=%%~dpI"
 
 if exist "%FULL_DEST%" (
   if "%FORCE%"=="1" (
-    del /f /q "%FULL_DEST%"
     echo   replace: %FULL_DEST%
   ) else (
-    echo   skip:    already exists: %FULL_DEST% ^(use --force^)
-    exit /b 0
+    rem compare timestamps; skip if dest is newer or same
+    for %%S in ("%FULL_SRC%")  do set "SRC_TIME=%%~tS"
+    for %%D in ("%FULL_DEST%") do set "DEST_TIME=%%~tD"
+    if "!SRC_TIME!"=="!DEST_TIME!" (
+      echo   skip:    up to date: %FULL_DEST%
+      exit /b 0
+    )
+    echo   update:  %FULL_DEST%
   )
+) else (
+  echo   create:  %FULL_DEST%
 )
 
 if not exist "%DEST_DIR%" (
@@ -60,13 +67,11 @@ if not exist "%DEST_DIR%" (
   echo   mkdir:   %DEST_DIR%
 )
 
-mklink "%FULL_DEST%" "%FULL_SRC%" >nul
+copy /y "%FULL_SRC%" "%FULL_DEST%" >nul
 if errorlevel 1 (
-  echo   FAIL:    mklink %FULL_DEST%
-  echo            Run as Administrator or enable Developer Mode.
+  echo   FAIL:    copy to %FULL_DEST%
   exit /b 1
 )
-echo   link:    %FULL_DEST% -^> %FULL_SRC%
 exit /b 0
 
 :merge_vscode
