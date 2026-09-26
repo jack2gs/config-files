@@ -3,7 +3,7 @@
 """ ======================
 
 """ General Navigation
-noremap ga :vsc workbench.action.showCommands<CR>
+map ga :vsc workbench.action.showCommands<CR>
 
 
 """ File/Buffer Navigation
@@ -66,10 +66,10 @@ noremap <leader>x "_x
 """   Search & Replace
 """ ======================
 
-noremap <leader>ss :vsc actions.find<CR>
-noremap <leader>pss :vsc workbench.action.findInFiles<CR>
-noremap <leader>sr :vsc editor.action.startFindReplaceAction<CR>
-noremap <leader>psr :vsc workbench.action.replaceInFiles<CR>
+map <leader>sf :vsc actions.find<CR>
+map <leader>sr :vsc editor.action.startFindReplaceAction<CR>
+map <leader>sF :vsc workbench.action.findInFiles<CR>
+map <leader>sR :vsc workbench.action.replaceInFiles<CR>
 noremap <F8> :vsc editor.action.marker.nextInFiles<CR>
 noremap <S-F8> :vsc editor.action.marker.prevInFiles<CR>
 
@@ -86,8 +86,21 @@ noremap <leader>cb :vsc editor.action.blockComment<CR>
 noremap <leader>cl :vsc editor.action.commentLine<CR>
 
 """ Folding
-noremap <leader>zc :vsc editor.foldAllMarkerRegions<CR>
-noremap <leader>zo :vsc editor.unfoldAllMarkerRegions<CR>
+"""map zc :vsc editor.fold<CR>
+"""map zo :vsc editor.unfold<CR>
+"""map zC :vsc editor.foldRecursively<CR>
+"""map zO :vsc editor.unfoldRecursively<CR>
+"""map zm :vsc editor.foldAllMarkerRegions<CR>
+"""map zr :vsc editor.unfoldAllMarkerRegions<CR>
+"""map zM :vsc editor.foldAll<CR>
+"""map zR :vsc editor.unfoldAll<CR>
+"""map za :vsc editor.toggleFold<CR>
+"""map zA :vsc editor.toggleFoldRecursively<CR>
+
+""" Help Doc
+map K :vsc editor.action.showHover<CR>
+map gK :vsc editor.action.triggerParameterHints<CR>
+imap <A-k> :vsc editor.action.triggerParameterHints<CR>
 
 """ ======================
 """   Miscellaneous

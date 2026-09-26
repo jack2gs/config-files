@@ -95,7 +95,11 @@ map <C-S-Up> :m -2<CR>
 map <C-S-Down> :m +1<CR>
 map <C-S-A-Up> <Action>(MoveStatementUp) 
 map <C-S-A-Down> <Action>(MoveStatementDown) 
+<<<<<<< HEAD
 map <leader>es :sort<CR>
+=======
+noremap <leader>ls :sort<CR>
+>>>>>>> eff5f8c (refine keymap for fold, help doc and search&replace)
 
 """ Multi-caret Operations
 map <leader>oo <Action>(SelectAllOccurrences)
@@ -113,11 +117,10 @@ noremap <leader>x "_x
 """ ======================
 """   Search & Replace
 """ ======================
-
-map <leader>ss <Action>(Find)
-map <leader>pss <Action>(FindInPath)
+map <leader>sf <Action>(Find)
 map <leader>sr <Action>(Replace)
-map <leader>psr <Action>(ReplaceInPath)
+map <leader>sF <Action>(FindInPath)
+map <leader>sR <Action>(ReplaceInPath)
 map <F3> <Action>(FindNext)
 map <S-F3> <Action>(FindPrevious)
 map <F8> <Action>(GotoNextError)
@@ -152,9 +155,10 @@ map <leader>cl <Action>(CommentByLineComment)
 """ Folding
 map zc <Action>(CollapseRegion)
 map zo <Action>(ExpandRegion)
-map <leader>zc <Action>(CollapseAllRegions)
-map <leader>zo <Action>(ExpandAllRegions)
-
+map zC <Action>(CollapseRegionRecursively)
+map zO <Action>(ExpandRegionRecursively)
+map zM <Action>(CollapseAllRegions)
+map zR <Action>(ExpandAllRegions)
 
 """ ======================
 """   Project Management
@@ -199,6 +203,12 @@ map <S-F11> <Action>(StepOut)
 map <C-F10> <Action>(RunToCursor)
 
 
+""" Help Doc
+map K <Action>(QuickJavaDoc)
+map gK <Action>(ParameterInfo)
+imap <A-k> <Action>(ParameterInfo)
+
+
 """ ======================
 """   Unit Testing
 """ ======================
@@ -235,4 +245,4 @@ map <C-A-F4> <Action>(CloseAllEditors)<CR>
 map <C-S-T> <Action>(ReopenClosedTab)
 
 """ Config Reload
-noremap <leader>sc :source ~/.ideavimrc<CR>
+noremap <leader>cr :source ~/.ideavimrc<CR>
