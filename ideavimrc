@@ -95,11 +95,7 @@ map <C-S-Up> :m -2<CR>
 map <C-S-Down> :m +1<CR>
 map <C-S-A-Up> <Action>(MoveStatementUp) 
 map <C-S-A-Down> <Action>(MoveStatementDown) 
-<<<<<<< HEAD
-map <leader>es :sort<CR>
-=======
 noremap <leader>ls :sort<CR>
->>>>>>> eff5f8c (refine keymap for fold, help doc and search&replace)
 
 """ Multi-caret Operations
 map <leader>oo <Action>(SelectAllOccurrences)
