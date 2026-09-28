@@ -4,5 +4,6 @@
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
     "vim.leader": "<Space>",
-    "vim.easymotion": true
+    "vim.easymotion": true,
+    "vim.foldfix": true
 }
